@@ -7,6 +7,8 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import copy from 'rollup-plugin-copy';
+import html from '@rollup/plugin-html';
+import indexTemplate from './src/index';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -45,6 +47,9 @@ export default {
         { src: 'src/static/*', dest: 'public' }
       ]
     }),
+		html({
+			template: indexTemplate
+		}),
 		svelte({
 			preprocess: sveltePreprocess({ sourceMap: !production }),
 			compilerOptions: {
