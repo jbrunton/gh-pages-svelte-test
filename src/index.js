@@ -9,9 +9,9 @@ export default ({ publicPath }) => `
 
 	<link rel='icon' type='image/png' href='${publicPath}/favicon.png'>
 	<link rel='stylesheet' href='${publicPath}/global.css'>
-	<link rel='stylesheet' href='${publicPath}/build/bundle.css'>
+	<link rel='stylesheet' href='${publicPath}/bundle.css'>
 
-	<script defer src='${publicPath}/build/bundle.js'></script>
+	<script defer src='${publicPath}/bundle.js'></script>
 </head>
 
 <body>
