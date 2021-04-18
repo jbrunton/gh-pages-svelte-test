@@ -48,6 +48,7 @@ export default {
       ]
     }),
 		html({
+			publicPath: production ? '/gh-pages-svelte-test' : '',
 			template: indexTemplate
 		}),
 		svelte({

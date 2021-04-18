@@ -1,4 +1,4 @@
-export default () => `
+export default ({ publicPath }) => `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +7,11 @@ export default () => `
 
 	<title>Svelte app</title>
 
-	<link rel='icon' type='image/png' href='/favicon.png'>
-	<link rel='stylesheet' href='/global.css'>
-	<link rel='stylesheet' href='/build/bundle.css'>
+	<link rel='icon' type='image/png' href='${publicPath}/favicon.png'>
+	<link rel='stylesheet' href='${publicPath}/global.css'>
+	<link rel='stylesheet' href='${publicPath}/build/bundle.css'>
 
-	<script defer src='/build/bundle.js'></script>
+	<script defer src='${publicPath}/build/bundle.js'></script>
 </head>
 
 <body>
