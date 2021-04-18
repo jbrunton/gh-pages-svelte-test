@@ -61,7 +61,7 @@ export default {
       extract: true
     }),
 		html({
-			publicPath: production ? '/gh-pages-svelte-test' : ''
+			publicPath: production ? '/gh-pages-svelte-test/' : ''
 		}),
 		
 		// If you have external dependencies installed from
