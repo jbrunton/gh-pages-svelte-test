@@ -8,7 +8,6 @@ import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss'
 import copy from 'rollup-plugin-copy';
 import html from '@rollup/plugin-html';
-import indexTemplate from './src/index';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -49,10 +48,6 @@ export default {
         { src: 'src/static/*', dest: 'public' }
       ]
     }),
-		html({
-			publicPath: production ? '/gh-pages-svelte-test' : '',
-			template: indexTemplate
-		}),
 		svelte({
 			preprocess: sveltePreprocess({ sourceMap: !production }),
 			compilerOptions: {
@@ -65,7 +60,10 @@ export default {
 		postcss({
       extract: true
     }),
-
+		html({
+			publicPath: production ? '/gh-pages-svelte-test' : ''
+		}),
+		
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration -
